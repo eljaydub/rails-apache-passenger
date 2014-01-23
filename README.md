@@ -8,8 +8,8 @@ A simple setup script that will install and setup all of the dependencies needed
 
 First set a password for the ubuntu user with 
 
-* 'sudo psswd ubuntu'
+* `sudo psswd ubuntu`
 
 Then run the railsready script from joshfng with 
 
-* 'wget --no-check-certificate https://raw.github.com/joshfng/railsready/master/railsready.sh && bash railsready.sh'
+* `wget --no-check-certificate https://raw.github.com/joshfng/railsready/master/railsready.sh && bash railsready.sh`
