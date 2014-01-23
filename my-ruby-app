@@ -1,0 +1,20 @@
+ <VirtualHost *:80>
+      ServerName www.my-ruby-app-host.com
+      # !!! Be sure to point DocumentRoot to 'public'!
+      DocumentRoot /var/www/
+      <Directory /var/www/>
+         Allow from all
+      </Directory>
+
+      Alias /my-ruby-app /var/www/my-ruby-app/public
+      <Location /my-ruby-app>
+         PassengerBaseURI /my-ruby-app
+         PassengerAppRoot /var/www/my-ruby-app
+      </Location>
+      <Directory /var/www/my-ruby-app/public>
+         # This relaxes Apache security settings.
+         AllowOverride all
+         # MultiViews must be turned off.
+         Options -MultiViews
+      </Directory>
+   </VirtualHost>
