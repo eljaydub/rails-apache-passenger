@@ -12,3 +12,5 @@ First set a password for the ubuntu user with
 Then run the railsready script from joshfng with 
 
 * `wget --no-check-certificate https://raw.github.com/joshfng/railsready/master/railsready.sh && bash railsready.sh`
+ 
+Now simply run the rails-apache-passenger script.
