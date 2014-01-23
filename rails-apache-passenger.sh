@@ -1,11 +1,13 @@
 #!/bin/bash
+# Check the readme for latest info
+#Run the following two commands before continuing
+#sudo passwd ubuntu
+#wget --no-check-certificate https://raw.github.com/joshfng/railsready/master/railsready.sh && bash railsready.sh
+#Logout and then log back in and then run this script
 #
 #Tested on Ubuntu 12.04 on an AWS t1.micro instance 
+#License: MIT
 #Author: Lee Wasilenko
-
-sudo passwd ubuntu
-wget --no-check-certificate https://raw.github.com/joshfng/railsready/master/railsready.sh && bash railsready.sh
-
 
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -42,4 +44,4 @@ sudo service apache2 restart
 my_ec2_ip=`GET http://169.254.169.254/latest/meta-data/public-ipv4`
 echo "Go to http://$my_ec2_ip/my-ruby-app to see your default rails web app"
 echo "Logout and log back in to start using rails"
-echo "Thanks to Hongli Lai & Ninh Bui"
+echo "Thanks to Josh Frye, Wayne E. Seguin, Ryan McGeary, Hongli Lai & Ninh Bui"
