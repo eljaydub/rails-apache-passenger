@@ -48,7 +48,7 @@ cd /var/www/my-ruby-app
 bundle install
 cd -
 sudo chmod o-w /var/www/
-sudo chown -R root:root /var/www/my-ruby-app
+sudo chown -R www-data:www-data /var/www/my-ruby-app
 
 #Restart apache
 sudo service apache2 restart

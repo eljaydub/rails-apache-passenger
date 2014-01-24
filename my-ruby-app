@@ -17,4 +17,4 @@
          # MultiViews must be turned off.
          Options -MultiViews
       </Directory>
-   </VirtualHost>
+</VirtualHost>
