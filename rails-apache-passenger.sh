@@ -15,12 +15,13 @@ sudo apt-get -y upgrade
 sudo apt-get -y install apache2 libcurl4-openssl-dev apache2-threaded-dev libapr1-dev libaprutil1-dev libwww-perl nodejs
 
 #Using ruby-1.9.3 to maintain compatibility with JRuby
-rvm install 1.9.3
-rvm use --default 1.9.3
+#rvm install 1.9.3 # Leave out for now to reduce complexity
+#rvm use --default 1.9.3 # Leave out for now to reduce complexity
 gem install bundler
 #--no-ri --no-rdoc flags for rails since this takes a very long time on an t1.micro instance
 gem install --no-ri --no-rdoc rails 
 gem install passenger
+#Create some swap space so compiling goes smoother with limited RAM
 sudo dd if=/dev/zero of=/swap bs=1M count=1024
 sudo mkswap /swap
 sudo swapon /swap
@@ -55,5 +56,4 @@ sudo service apache2 restart
 #You're good to go!
 my_ec2_ip=`GET http://169.254.169.254/latest/meta-data/public-ipv4`
 echo "Go to http://$my_ec2_ip/my-ruby-app to see your default rails web app"
-echo "Logout and log back in to start using rails"
 echo "Thanks to Josh Frye, Wayne E. Seguin, Ryan McGeary, Hongli Lai & Ninh Bui"
